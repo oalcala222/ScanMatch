@@ -26,5 +26,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.6.9",
     "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
   }
 }
