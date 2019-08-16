@@ -20,5 +20,6 @@ export default class Login extends Component {
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.loginUser = this.loginUser.bind(this);
-      }
+      
+}
 }
