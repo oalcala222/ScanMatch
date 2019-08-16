@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/oalcala222/ScanMatch#readme",
   "dependencies": {
+    "aws-amplify": "^1.1.36",
     "express": "^4.17.1",
     "mongoose": "^5.6.9",
     "react-router-dom": "^5.0.1"
