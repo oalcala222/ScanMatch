@@ -34,4 +34,27 @@ handlePasswordChange(event) {
   });
 }
 
+loginUser(submitObject) {
+
+  axios.post('/apis/users/login', submitObject)
+    .then(function (data) {
+      console.log(data.data);
+      if (data.data.success) {
+        this.props.authenticate();
+        this.setState({
+          redirectToReferrer: true
+        });
+       } else {
+         alert(data.data.message);
+       }
+    }.bind(this)).catch(function (err){
+      consolw.log(err);
+    });
+
+  this.setState({
+    username: '',
+    password: ''
+  });
+}
+
 }
