@@ -57,4 +57,22 @@ loginUser(submitObject) {
   });
 }
 
+handleSubmit(event) {
+  event.preventDefault();
+  const usernameInput = this.state.username;
+  const passwordInput = this.state.password;
+
+  const objSubmit = {
+    username: usernameInput,
+    password: passwordInput
+  }
+
+  if (!objSubmit.username || !objSubmit.password) {
+    return;
+  }
+
+  this.loginUser(objSubmit);
+}
+
+
 }
