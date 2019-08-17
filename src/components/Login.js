@@ -22,4 +22,16 @@ export default class Login extends Component {
         this.loginUser = this.loginUser.bind(this);
       
 }
+handleUsernameChange(event) {
+  this.setState({
+    username: event.target.value
+  });
+}
+
+handlePasswordChange(event) {
+  this.setState({
+    password: event.target.value
+  });
+}
+
 }
