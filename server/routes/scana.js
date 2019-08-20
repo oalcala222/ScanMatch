@@ -6,4 +6,11 @@ router.route("/")
   .get(scanController.findAll)
   .post(scanController.create);
 
+router
+  .route("/:id")
+  .get(scanController.findById)
+  .put(scanController.update)
+  .delete(scanController.remove);
+
+  
 module.exports = router;
