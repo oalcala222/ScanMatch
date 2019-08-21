@@ -23,7 +23,6 @@ app.use(function(req, res, next) {
 
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 const authCheck = require('./config/middleware/attachAuthenticationStatus'); 
-=======
 const PORT = process.env.PORT || 3001;
 
 // Express settings
