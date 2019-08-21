@@ -1,10 +1,12 @@
 import React from "react";
+import QRScan from "../QRscan";
 
 
 function Scan() {
   return (
-    <div>
-     <h1>Scan Page!</h1>
+    <div className="container">
+      <h1>Scan</h1>
+      <QRScan />
     </div>
   );
 }

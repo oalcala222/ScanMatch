@@ -12,22 +12,15 @@ export default class QRScan extends Component {
     }
 
     resize() {
-        let currentHideScan = (window.innerWidth <= 760);
+        let currentHideScan = (window.innerWidth <= 768);
         if (currentHideScan !== this.state.hideScan) {
             this.setState({ hideScan: currentHideScan });
-        }
-    }
-    isMobile() {
-        if (this.state.hideScan) {
-            return true
-        }
-        else {
-            return false
         }
     }
     //Scan Functions
     handleScan = data => {
         if (data) {
+            //Function for retrieving related data is pending.
             console.log(data)
             this.setState({ testScan: data })
         }
@@ -38,15 +31,15 @@ export default class QRScan extends Component {
     render() {
         if (this.state.hideScan) {
             return (
-                <div>
-                    <div style={{ width: "300px", border: "solid .1em #000", backgroundColor: "#fff" }}>
+                <div class="row justify-content-around">
+                    <div class="col-sm-8">
                         <QrReader
                             delay={500}
                             onError={this.handleError}
                             onScan={this.handleScan}
-                            style={{ width: '99%', border: "solid .1em #000" }}
+                            style={{ width: '100%', border: "solid .2em #000" }}
                         />
-                        <div id="labrats">
+                        <div id="labrats" style={{ border: "solid .2em #000", backgroundColor: "#fff" }}>
                             <p>{this.state.testScan}</p>
                         </div>
                     </div>
@@ -55,9 +48,18 @@ export default class QRScan extends Component {
         }
         else {
             return (
-                <div>
-                    Scan functionality goes here.
-                </div>
+                <>
+                    <div class="row  justify-content-around">
+                        <div class="col-sm-4">
+                            <img src="qrphone.png" width="300px" />
+                        </div>
+                    </div>
+                    <div class="row  justify-content-around">
+                        <div class="col-sm-6">
+                            <strong>Smartphone users can go to this page to scan QR codes for item information.</strong>
+                        </div>
+                    </div>
+                </>
             )
         }
     }

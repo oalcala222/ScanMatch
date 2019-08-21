@@ -6,7 +6,6 @@ import Scan from "./components/Pages/Scan";
 import Upload from "./components/Pages/UploadXL";
 import Nav from "./components/Nav/Nav";
 import './App.css';
-import QRScan from "./components/QRscan.js";
 
 function App() {
   return (
@@ -22,5 +21,5 @@ function App() {
       </div>
     </Router>
   );
-
+}
 export default App;
