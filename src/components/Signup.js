@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Auth from './utils/Auth';
-import Nav from './children/Nav'
+import Nav from './Nav'
 
 require('./Signup.css');
 

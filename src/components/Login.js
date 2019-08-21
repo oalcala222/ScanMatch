@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import Nav from './children/Nav'
+import Nav from './Nav'
 
 
 require('./login.css');
