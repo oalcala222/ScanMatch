@@ -23,21 +23,4 @@ function App() {
     </Router>
   );
 
-
-class App extends Component {
-  state = {
-
-  }
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <QRScan />
-        </header>
-      </div>
-    );
-  }
-
-}
-}
 export default App;
