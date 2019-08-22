@@ -4,13 +4,15 @@ const express = require("express");
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
 const passport = require("./config/passport");
 const session  = require('express-session'); 
 const config	= require("./config/extra-config");
-const PORT = process.env.PORT || 3001;
 
+
+// Express settings
+// ================
+// instantiate our app
+const app = express();
 
 // Enable CORS from client-side
 app.use(function(req, res, next) {  
@@ -24,11 +26,6 @@ app.use(function(req, res, next) {
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 const authCheck = require('./config/middleware/attachAuthenticationStatus'); 
 const PORT = process.env.PORT || 3001;
-
-// Express settings
-// ================
-// instantiate our app
-const app = express();
 
 
 // Configure body parsing for AJAX requests

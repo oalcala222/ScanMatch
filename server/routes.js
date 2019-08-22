@@ -1,4 +1,4 @@
-module.exports = function(app){
+module.exports = function (app){
     // Our model controllers (rather than routes)
     const users = require('./routes/users');
     const xlupload = require('./routes/xldata');
@@ -12,7 +12,4 @@ module.exports = function(app){
     app.use('/scanneddata', scanupload);
     //other routes..
 }
-
-
-module.exports = router;
 
