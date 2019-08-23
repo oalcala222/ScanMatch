@@ -4,9 +4,9 @@ const express = require("express");
 const path = require('path');
 const logger = require('morgan');
 const mongoose = require("mongoose");
-const passport = require("./config/passport");
+const passport = require("./server/config/passport");
 const session  = require('express-session'); 
-const config	= require("./config/extra-config");
+const config	= require("./server/config/extra-config");
 
 
 // Express settings
@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 });
 
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-const authCheck = require('./config/middleware/attachAuthenticationStatus'); 
+const authCheck = require('./server/config/middleware/attachAuthenticationStatus'); 
 const PORT = process.env.PORT || 3001;
 
 
@@ -48,7 +48,7 @@ app.use(authCheck);
 
 // Add routes, both API and view
 // =============================
-const routes = require("./routes");
+const routes = require("./server/routes");
 app.use(routes);
 //require('./routes')(app);
 
