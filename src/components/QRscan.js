@@ -31,8 +31,8 @@ export default class QRScan extends Component {
     render() {
         if (this.state.hideScan) {
             return (
-                <div class="row justify-content-around">
-                    <div class="col-sm-8">
+                <div className="row justify-content-around">
+                    <div className="col-sm-8">
                         <QrReader
                             delay={500}
                             onError={this.handleError}
@@ -49,13 +49,13 @@ export default class QRScan extends Component {
         else {
             return (
                 <>
-                    <div class="row  justify-content-around">
+                    <div className="row  justify-content-around">
                         <div class="col-sm-4">
                             <img src="qrphone.png" width="300px" />
                         </div>
                     </div>
-                    <div class="row  justify-content-around">
-                        <div class="col-sm-6">
+                    <div className="row  justify-content-around">
+                        <div className="col-sm-6">
                             <strong>Smartphone users can go to this page to scan QR codes for item information.</strong>
                         </div>
                     </div>
