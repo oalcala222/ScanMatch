@@ -10,7 +10,7 @@ const config	= require("./server/config/extra-config");
 
 
 // Express settings
-// ================
+// ===================
 // instantiate our app
 const app = express();
 

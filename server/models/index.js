@@ -1,4 +1,5 @@
 module.exports = {
     Cage: require("./Cage"),
-    User: require("./User")
+    User: require("./User"),
+    Upload: require("./uploaded")
 }

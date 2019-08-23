@@ -1,11 +1,14 @@
 import React from "react";
-
+import Nav from "../Nav/Nav";
 
 function Upload() {
   return (
-    <div>
-     <h1>Upload Page!</h1>
-    </div>
+    <>
+      <Nav />
+      <div className="container">
+        <h1>Upload Page!</h1>
+      </div>
+    </>
   );
 }
 
