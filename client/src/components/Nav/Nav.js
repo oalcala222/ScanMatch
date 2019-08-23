@@ -10,7 +10,9 @@ class Nav extends Component {
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
   }
-
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   resize() {
     let currentHideNav = (window.innerWidth <= 768);
     if (currentHideNav !== this.state.hideNav) {
@@ -81,7 +83,7 @@ class Nav extends Component {
         <Link className="navbar-brand" to="/">
           Scan Match
         </Link>
-        <div class="dropdown">
+        <div className="dropdown">
           <button className="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Navigation
   </button>

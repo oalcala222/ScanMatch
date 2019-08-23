@@ -5,6 +5,8 @@ import Match from "./components/Pages/Match";
 import Scan from "./components/Pages/Scan";
 import Upload from "./components/Pages/UploadXL";
 import Nav from "./components/Nav/Nav";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 import './App.css';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="/match" component={Match} />
           <Route exact path="/scanning" component={Scan} />
           <Route exact path="/upload" component={Upload} />
+          <Route exact path="/signin" component={Login} />
+          <Route exact path="/signup" component={Signup} />
         </Switch>
       </div>
     </Router>

@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import Nav from './Nav'
+import Nav from './Nav/Nav'
 
 
-require('./login.css');
+//require('./login.css');
 
 export default class Login extends Component {
 
@@ -48,7 +48,7 @@ export default class Login extends Component {
           alert(data.data.message);
         }
       }.bind(this)).catch(function (err) {
-        consolw.log(err);
+        console.log(err);
       });
 
     this.setState({
