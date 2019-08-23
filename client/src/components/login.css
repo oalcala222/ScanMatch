@@ -1,0 +1,27 @@
+h1 {
+    font-family:"Courier New", serif
+}
+.dark-grey{
+    color: #444;
+}
+.bordered555{
+    border: solid 1px #555;
+    padding: 1px;
+}
+.login-help{
+    padding-top:10px;
+}
+@media only screen and (min-width: 769px){
+    #password-input{
+        margin-left:5px;
+        margin-right:5px;
+        margin-top:0px;
+    }
+}
+@media only screen and (max-width:768px){
+    #password-input{
+        margin-left:0px;
+        margin-right: 5px;
+        margin-top:5px;
+    }
+}

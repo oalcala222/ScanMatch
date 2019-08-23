@@ -40,16 +40,16 @@ class Nav extends Component {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/discover"
-                  className={window.location.pathname === "/discover" ? "nav-link active" : "nav-link"}
+                  to="/upload"
+                  className={window.location.pathname === "/upload" ? "nav-link active" : "nav-link"}
                 >
                   [ Discover ]
             </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  to="/search"
-                  className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
+                  to="/match"
+                  className={window.location.pathname === "/match" ? "nav-link active" : "nav-link"}
                 >
                   [ Search ]
             </Link>

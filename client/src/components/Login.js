@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import Nav from './Nav'
-
+import Nav from './Nav/Nav';
 
 require('./login.css');
 
@@ -48,7 +47,7 @@ export default class Login extends Component {
           alert(data.data.message);
         }
       }.bind(this)).catch(function (err) {
-        consolw.log(err);
+        console.log(err);
       });
 
     this.setState({
@@ -92,15 +91,15 @@ export default class Login extends Component {
           deAuthenticate={this.props.deAuthenticate}
           logout={this.props.logout}
         />
-        <div className="loginmodal-container">
-          <h1 className="">Log In to Your Account</h1><br />
+        <div className="container loginmodal-container">
+          <h1 className="dark-grey">Log In to Your Account</h1><br />
           <form className="login" onSubmit={this.handleSubmit.bind(this)}>
             <input id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
             <input id="password-input" ref="password" type="password" name="pass" placeholder="Password" onChange={this.handlePasswordChange} value={this.state.password} />
             <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
           </form>
           <div className="login-help">
-            <Link to={"/signup"}> Register </Link>
+            <Link className="dark-grey bordered555" to={"/signup"}> Register </Link>
           </div>
         </div>
       </div>

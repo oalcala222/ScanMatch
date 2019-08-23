@@ -1,13 +1,17 @@
 import React from "react";
 import QRScan from "../QRscan";
+import Nav from "../Nav/Nav";
 
 
 function Scan() {
   return (
-    <div className="container">
-      <h1>Scan</h1>
-      <QRScan />
-    </div>
+    <>
+      <Nav />
+      <div className="container">
+        <h1>Scan</h1>
+        <QRScan />
+      </div>
+    </>
   );
 }
 
