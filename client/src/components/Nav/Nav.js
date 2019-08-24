@@ -22,7 +22,7 @@ class Nav extends Component {
       return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark row justify-content-around">
           <Link className="navbar-brand" to="/">
-            Scan Match
+            ScanMatch
       </Link>
           <div className="col-6-md">
             <ul className="navbar-nav">
