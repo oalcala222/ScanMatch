@@ -7,7 +7,14 @@ function Home() {
     <>
       <Nav />
       <div className="container">
-        <h1>Home Page!</h1>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">ScanMatch</h1>
+            <p class="lead">An audit API that matches data sets from two sources.</p>
+          </div>
+        </div>
+
+
       </div>
     </>
   );
