@@ -26,7 +26,7 @@ class Nav extends Component {
       </Link>
           <div className="col-6-md">
             <ul className="navbar-nav">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   to="/"
                   className={
@@ -37,7 +37,7 @@ class Nav extends Component {
                 >
                   [ About ]
             </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link
                   to="/upload"
@@ -48,18 +48,18 @@ class Nav extends Component {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/match"
-                  className={window.location.pathname === "/match" ? "nav-link active" : "nav-link"}
-                >
-                  [ Search ]
-            </Link>
-              </li>
-              <li className="nav-item">
-                <Link
                   to="/scanning"
                   className={window.location.pathname === "/scanning" ? "nav-link active" : "nav-link"}
                 >
                   [ Scan ]
+            </Link>
+            </li>
+            <li className="nav-item">
+                <Link
+                  to="/match"
+                  className={window.location.pathname === "/match" ? "nav-link active" : "nav-link"}
+                >
+                  [ Audit ]
             </Link>
               </li>
             </ul>

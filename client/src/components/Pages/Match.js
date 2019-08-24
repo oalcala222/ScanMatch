@@ -7,7 +7,7 @@ function Match() {
     <>
       <Nav />
       <div className="container">
-        <h1>Match Page!</h1>
+        <h1>Show matches between "Systems Generated Id" from the QR scan and the "Cage SID from the excel sheet</h1>
       </div>
     </>
   );
