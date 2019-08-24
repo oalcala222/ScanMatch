@@ -43,7 +43,7 @@ class Nav extends Component {
                   to="/upload"
                   className={window.location.pathname === "/upload" ? "nav-link active" : "nav-link"}
                 >
-                  [ Discover ]
+                  [ Spreadsheet ]
             </Link>
               </li>
               <li className="nav-item">
@@ -81,7 +81,7 @@ class Nav extends Component {
         <Link className="navbar-brand" to="/">
           Scan Match
         </Link>
-        <div class="dropdown">
+        <div className="dropdown">
           <button className="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Navigation
   </button>
@@ -98,14 +98,14 @@ class Nav extends Component {
               [ About ]
             </Link>
             <Link
-              to="/discover"
-              className={window.location.pathname === "/discover" ? "nav-link active black" : "nav-link black"}
+              to="/upload"
+              className={window.location.pathname === "/upload" ? "nav-link active black" : "nav-link black"}
             >
-              [ Discover ]
+              [ Spreadsheet ]
             </Link>
             <Link
-              to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active black" : "nav-link black"}
+              to="/match"
+              className={window.location.pathname === "/match" ? "nav-link active black" : "nav-link black"}
             >
               [ Search ]
             </Link>

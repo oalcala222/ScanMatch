@@ -1,8 +1,8 @@
-import React, { Component } from "react"; 
+import React, { Component } from "react";
 import Nav from "../Nav/Nav";
-import { Table, Button, Popconfirm, Row, Col, Icon, Upload } from "antd"; 
-import { EditableFormRow, EditableCell } from "../../utils/editable"; 
-import { ExcelRenderer } from "react-excel-renderer"; 
+import { Table, Button, Popconfirm, Row, Col, Icon, Upload } from "antd";
+import { EditableFormRow, EditableCell } from "../../utils/editable";
+import { ExcelRenderer } from "react-excel-renderer";
 
 
 class ExcelPage extends Component {
@@ -14,18 +14,23 @@ class ExcelPage extends Component {
       errorMessage: null,
       columns: [
         {
-          title: "NAME",
-          dataIndex: "name",
+          title: "CageSID",
+          dataIndex: "cagesid",
           editable: true
         },
         {
-          title: "AGE",
-          dataIndex: "age",
+          title: "URL",
+          dataIndex: "url",
           editable: true
         },
         {
-          title: "GENDER",
-          dataIndex: "gender",
+          title: "CageTag",
+          dataIndex: "cagetag",
+          editable: true
+        },
+        {
+          title: "Mouseline",
+          dataIndex: "mouseline",
           editable: true
         },
         {
@@ -70,7 +75,7 @@ class ExcelPage extends Component {
     const isExcel =
       file[0].type === "application/vnd.ms-excel" ||
       file[0].type ===
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     if (!isExcel) {
       errorMessage = "You can only upload Excel file!";
     }
@@ -84,7 +89,7 @@ class ExcelPage extends Component {
   }
 
 
-  
+
   fileHandler = fileList => {
     console.log("fileList", fileList)
     let fileObj = fileList
@@ -99,7 +104,7 @@ class ExcelPage extends Component {
       !(
         fileObj.type === "application/vnd.ms-excel" ||
         fileObj.type ===
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
       )
     ) {
       this.setState({
@@ -107,8 +112,8 @@ class ExcelPage extends Component {
       })
       return false
     }
-    
-    
+
+
     //just pass the fileObj as parameter
     ExcelRenderer(fileObj, (err, resp) => {
       if (err) {
@@ -119,9 +124,10 @@ class ExcelPage extends Component {
           if (row && row !== "undefined") {
             newRows.push({
               key: index,
-              name: row[0],
-              age: row[1],
-              gender: row[2],
+              cagesid: row[0],
+              url: row[1],
+              cagetag: row[2],
+              mouseline: row[3]
             })
           }
         })
@@ -143,33 +149,34 @@ class ExcelPage extends Component {
   }
 
 
-handleSubmit = async () => {
-  console.log("submitting: ", this.state.rows)
-  //submit to API
-  //if successful, banigate and clear the data
-  //this.setState({ rows: [] })
-}
-
-
-handleDelete = key => {
-  const rows = [...this.state.rows]
-  this.setState({ rows: rows.filter(item => item.key !== key) })
-}
-handleAdd = () => {
-  const { count, rows } = this.state
-  const newData = {
-    key: count,
-    name: "User's name",
-    age: "22",
-    gender: "Female",
+  handleSubmit = async () => {
+    console.log("submitting: ", this.state.rows)
+    //submit to API
+    //if successful, banigate and clear the data
+    //this.setState({ rows: [] })
   }
-  this.setState({
-    rows: [newData, ...rows],
-    count: count + 1,
-  })
-}
 
-render() {
+
+  handleDelete = key => {
+    const rows = [...this.state.rows]
+    this.setState({ rows: rows.filter(item => item.key !== key) })
+  }
+  handleAdd = () => {
+    const { count, rows } = this.state
+    const newData = {
+      key: count,
+      cagesid: "1234",
+      url: "http://softmouse.net/smdb/cage/edit.do?cageId=1234567",
+      cagetag: "",
+      mouseline: "ABC-1"
+    }
+    this.setState({
+      rows: [newData, ...rows],
+      count: count + 1,
+    })
+  }
+
+  render() {
     const components = {
       body: {
         row: EditableFormRow,
@@ -191,89 +198,89 @@ render() {
         }),
       }
     });
-  return (
-    <>
-      <Nav />
-      <div className="container">
-        <h1>Importing Excel Component</h1>
-        <Row gutter={16} justify="space-between">
-  <Col
-    span={8}
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: "5%",
-    }}
-  >
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <div className="page-title">Upload Farmer Data</div>
-    </div>
-  </Col>
-  <Col span={8}>
-    <a
-      href="https://res.cloudinary.com/bryta/raw/upload/v1562751445/Sample_Excel_Sheet_muxx6s.xlsx"
-      target="_blank"
-      rel="noopener noreferrer"
-      download
-    >
-      Sample excel sheet
-    </a>
-  </Col>
-  <Col
-    span={8}
-    align="right"
-    style={{ display: "flex", justifyContent: "space-between" }}
-  >
-    {this.state.rows.length > 0 && (
+    return (
       <>
-        <Button
-          onClick={this.handleAdd}
-          size="large"
-          type="info"
-          style={{ marginBottom: 16 }}
-        >
-          <Icon type="plus" />
-          Add a row
+        <Nav />
+        <div className="container">
+          <h1>Importing Excel Component</h1>
+          <Row gutter={16} justify="space-between">
+            <Col
+              span={8}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "5%",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <div className="page-title">Upload Data</div>
+              </div>
+            </Col>
+            <Col span={8}>
+              <a
+                href="https://res.cloudinary.com/bryta/raw/upload/v1562751445/Sample_Excel_Sheet_muxx6s.xlsx"
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                Sample excel sheet
+    </a>
+            </Col>
+            <Col
+              span={8}
+              align="right"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              {this.state.rows.length > 0 && (
+                <>
+                  <Button
+                    onClick={this.handleAdd}
+                    size="large"
+                    type="info"
+                    style={{ marginBottom: 16 }}
+                  >
+                    <Icon type="plus" />
+                    Add a row
         </Button>{" "}
-        <Button
-          onClick={this.handleSubmit}
-          size="large"
-          type="primary"
-          style={{ marginBottom: 16, marginLeft: 10 }}
-        >
-          Submit Data
+                  <Button
+                    onClick={this.handleSubmit}
+                    size="large"
+                    type="primary"
+                    style={{ marginBottom: 16, marginLeft: 10 }}
+                  >
+                    Submit Data
         </Button>
-      </>
-    )}
-  </Col>
-</Row>
+                </>
+              )}
+            </Col>
+          </Row>
 
-<div>
-  <Upload
-    name="file"
-    beforeUpload={this.fileHandler}
-    onRemove={() => this.setState({ rows: [] })}
-    multiple={false}
-  >
-    <Button>
-      <Icon type="upload" /> Click to Upload Excel File
+          <div>
+            <Upload
+              name="file"
+              beforeUpload={this.fileHandler}
+              onRemove={() => this.setState({ rows: [] })}
+              multiple={false}
+            >
+              <Button>
+                <Icon type="upload" /> Click to Upload Excel File
     </Button>
-  </Upload>
-</div>
+            </Upload>
+          </div>
 
-<div style={{ marginTop: 20 }}>
-  <Table
-    components={components}
-    rowClassName={() => "editable-row"}
-    dataSource={this.state.rows}
-    columns={columns}
-  />
-</div>
+          <div style={{ marginTop: 20 }}>
+            <Table
+              components={components}
+              rowClassName={() => "editable-row"}
+              dataSource={this.state.rows}
+              columns={columns}
+            />
+          </div>
 
-      </div>
-    </>
-  );
-}
+        </div>
+      </>
+    );
+  }
 }
 export default ExcelPage;

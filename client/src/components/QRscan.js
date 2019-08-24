@@ -50,7 +50,7 @@ export default class QRScan extends Component {
             return (
                 <>
                     <div className="row  justify-content-around">
-                        <div class="col-sm-4">
+                        <div className="col-sm-4">
                             <img src="qrphone.png" width="300px" />
                         </div>
                     </div>
