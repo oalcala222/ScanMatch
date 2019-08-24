@@ -104,8 +104,8 @@ class Nav extends Component {
               [ Spreadsheet ]
             </Link>
             <Link
-              to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active black" : "nav-link black"}
+              to="/match"
+              className={window.location.pathname === "/match" ? "nav-link active black" : "nav-link black"}
             >
               [ Search ]
             </Link>
