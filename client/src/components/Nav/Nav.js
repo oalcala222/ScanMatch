@@ -43,7 +43,7 @@ class Nav extends Component {
                   to="/upload"
                   className={window.location.pathname === "/upload" ? "nav-link active" : "nav-link"}
                 >
-                  [ Spreadsheet ]
+                  [ Upload ]
             </Link>
               </li>
               <li className="nav-item">
@@ -101,7 +101,7 @@ class Nav extends Component {
               to="/upload"
               className={window.location.pathname === "/upload" ? "nav-link active black" : "nav-link black"}
             >
-              [ Spreadsheet ]
+              [ Upload ]
             </Link>
             <Link
               to="/match"

@@ -19,18 +19,58 @@ class ExcelPage extends Component {
           editable: true
         },
         {
-          title: "URL",
-          dataIndex: "url",
-          editable: true
-        },
-        {
           title: "CageTag",
           dataIndex: "cagetag",
           editable: true
         },
         {
+          title: "CageType",
+          dataIndex: "cagetype",
+          editable: true
+        },
+        {
+          title: "# of Mice",
+          dataIndex: "mousecount",
+          editable: true
+        },
+        {
+          title: "Disposition",
+          dataIndex: "disposition",
+          editable: true
+        },
+        {
           title: "Mouseline",
           dataIndex: "mouseline",
+          editable: true
+        },
+        {
+          title: "Protocol",
+          dataIndex: "protocol",
+          editable: true
+        },
+        /* {
+          title: "Mice Tags",
+          dataIndex: "micetags",
+          editable: true
+        },
+        {
+          title: "Genotypes",
+          dataIndex: "genotypes",
+          editable: true
+        }, */
+        {
+          title: "Comment",
+          dataIndex: "comment",
+          editable: true
+        },
+        {
+          title: "Set up Date",
+          dataIndex: "setupdate",
+          editable: true
+        },
+        {
+          title: "Mouse Owner",
+          dataIndex: "owner",
           editable: true
         },
         {
@@ -125,9 +165,17 @@ class ExcelPage extends Component {
             newRows.push({
               key: index,
               cagesid: row[0],
-              url: row[1],
-              cagetag: row[2],
-              mouseline: row[3]
+              cagetag: row[1],
+              cagetype: row[2],
+              mousecount: row[3],
+              disposition: row[4],
+              mouseline: row[5],
+              protocol: row[6],
+              //micetags: row[7],
+              //genotypes: row[8],
+              comment: row[7],
+              setupdate: row[8],
+              owner: row[9]
             })
           }
         })
@@ -167,7 +215,7 @@ class ExcelPage extends Component {
       key: count,
       cagesid: "1234",
       url: "http://softmouse.net/smdb/cage/edit.do?cageId=1234567",
-      cagetag: "",
+      cagetag: "null",
       mouseline: "ABC-1"
     }
     this.setState({
