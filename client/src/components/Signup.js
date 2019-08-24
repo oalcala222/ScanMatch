@@ -229,7 +229,7 @@ export default class Signup extends Component {
 							<form onSubmit={this.handleSubmit.bind(this)}>
 								<br></br>
 								<div className="col-md-12">
-									<h3 className="dark-grey">Registration</h3>
+									<h3 className="text-light">Registration</h3>
 
 									<div id="username-form" ref="usernameForm" className="form-group col-lg-12">
 										<label>Username</label>

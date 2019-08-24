@@ -2,7 +2,12 @@ body {
 	color: white;
 }
 
+h3 {
+color: white;
+}
+
 #registration-container {
+    color: white;
     padding: 40px;
     display: inline-block;
     margin-top: 20%;
