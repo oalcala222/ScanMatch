@@ -1,11 +1,13 @@
 import React, { Component } from "react"; 
+import React from "react";
 import Nav from "../Nav/Nav";
 import { Table, Button, Popconfirm, Row, Col, Icon, Upload } from "antd"; 
-import { EditableFormRow, EditableCell } from "../../utils/editable"; 
+import { EditableFormRow, EditableCell } from "../utils/editable"; 
 import { ExcelRenderer } from "react-excel-renderer"; 
 
 
-class ExcelPage extends Component {
+
+export default class ExcelPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -107,8 +109,6 @@ class ExcelPage extends Component {
       })
       return false
     }
-    
-    
     //just pass the fileObj as parameter
     ExcelRenderer(fileObj, (err, resp) => {
       if (err) {
@@ -142,138 +142,18 @@ class ExcelPage extends Component {
     return false
   }
 
-
-handleSubmit = async () => {
-  console.log("submitting: ", this.state.rows)
-  //submit to API
-  //if successful, banigate and clear the data
-  //this.setState({ rows: [] })
-}
-
-
-handleDelete = key => {
-  const rows = [...this.state.rows]
-  this.setState({ rows: rows.filter(item => item.key !== key) })
-}
-handleAdd = () => {
-  const { count, rows } = this.state
-  const newData = {
-    key: count,
-    name: "User's name",
-    age: "22",
-    gender: "Female",
-  }
-  this.setState({
-    rows: [newData, ...rows],
-    count: count + 1,
-  })
-}
-
-render() {
-    const components = {
-      body: {
-        row: EditableFormRow,
-        cell: EditableCell,
-      },
-    }
-    const columns = this.state.columns.map(col => {
-      if (!col.editable) {
-        return col
-      }
-      return {
-        ...col,
-        onCell: record => ({
-          record,
-          editable: col.editable,
-          dataIndex: col.dataIndex,
-          title: col.title,
-          handleSave: this.handleSave,
-        }),
-      }
-    });
+  render() {
   return (
     <>
       <Nav />
       <div className="container">
+        <h1>Upload Page!</h1>
         <h1>Importing Excel Component</h1>
-        <Row gutter={16} justify="space-between">
-  <Col
-    span={8}
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginBottom: "5%",
-    }}
-  >
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <div className="page-title">Upload Farmer Data</div>
-    </div>
-  </Col>
-  <Col span={8}>
-    <a
-      href="https://res.cloudinary.com/bryta/raw/upload/v1562751445/Sample_Excel_Sheet_muxx6s.xlsx"
-      target="_blank"
-      rel="noopener noreferrer"
-      download
-    >
-      Sample excel sheet
-    </a>
-  </Col>
-  <Col
-    span={8}
-    align="right"
-    style={{ display: "flex", justifyContent: "space-between" }}
-  >
-    {this.state.rows.length > 0 && (
-      <>
-        <Button
-          onClick={this.handleAdd}
-          size="large"
-          type="info"
-          style={{ marginBottom: 16 }}
-        >
-          <Icon type="plus" />
-          Add a row
-        </Button>{" "}
-        <Button
-          onClick={this.handleSubmit}
-          size="large"
-          type="primary"
-          style={{ marginBottom: 16, marginLeft: 10 }}
-        >
-          Submit Data
-        </Button>
-      </>
-    )}
-  </Col>
-</Row>
-
-<div>
-  <Upload
-    name="file"
-    beforeUpload={this.fileHandler}
-    onRemove={() => this.setState({ rows: [] })}
-    multiple={false}
-  >
-    <Button>
-      <Icon type="upload" /> Click to Upload Excel File
-    </Button>
-  </Upload>
-</div>
-
-<div style={{ marginTop: 20 }}>
-  <Table
-    components={components}
-    rowClassName={() => "editable-row"}
-    dataSource={this.state.rows}
-    columns={columns}
-  />
-</div>
-
       </div>
     </>
   );
 }
 }
+
+
 export default ExcelPage;
