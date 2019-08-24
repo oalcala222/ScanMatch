@@ -223,11 +223,12 @@ export default class Signup extends Component {
 					deAuthenticate={this.props.deAuthenticate}
 					logout={this.props.logout}
 				/>
-				<div id="registration-container" className="container-fluid">
+				<div id="registration-container" className="container-fluid col-md-6">
 					<section className="container">
 						<div className="container-page">
 							<form onSubmit={this.handleSubmit.bind(this)}>
-								<div className="col-md-6">
+								<br></br>
+								<div className="col-md-12">
 									<h3 className="dark-grey">Registration</h3>
 
 									<div id="username-form" ref="usernameForm" className="form-group col-lg-12">
@@ -269,6 +270,7 @@ export default class Signup extends Component {
 									<h3 className="dark-grey"></h3>
 
 									<button type="submit" className="btn btn-light signup">Register</button>
+									<br></br><br></br>
 								</div>
 							</form>
 						</div>
