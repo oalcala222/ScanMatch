@@ -290,15 +290,25 @@ class ExcelPage extends Component {
                   >
                     <Icon type="plus" />
                     Add a row
-        </Button>{" "}
+                  </Button>{" "}
+                  <Button
+                    onClick={this.handleSubmit}
+                    size="large"
+                    type="danger"
+                    style={{ marginBottom: 16, marginLeft: 10 }}
+                    href = "/"
+                  >
+                    Go Back
+                   </Button>{" "}
                   <Button
                     onClick={this.handleSubmit}
                     size="large"
                     type="primary"
                     style={{ marginBottom: 16, marginLeft: 10 }}
+                    href = "/scanning"
                   >
                     Submit Data
-        </Button>
+                   </Button>
                 </>
               )}
             </Col>
