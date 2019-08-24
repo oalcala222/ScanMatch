@@ -25,7 +25,7 @@ app.use(function(req, res, next) {
 
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 const authCheck = require('./server/config/middleware/attachAuthenticationStatus'); 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 
 // Configure body parsing for AJAX requests
